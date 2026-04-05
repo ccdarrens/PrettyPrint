@@ -2,6 +2,8 @@
 
 Pretty Print is a local-first developer text inspection tool. You paste or upload messy text, and the site detects the format, reformats it for readability, and shows extracted details without sending your data to any backend.
 
+If you want to build, test, or contribute to the project, see [DEVELOPER.md](./DEVELOPER.md).
+
 ## What it supports
 
 - JSON
