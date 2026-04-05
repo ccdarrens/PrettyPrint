@@ -1,0 +1,5 @@
+{
+  "service": "prettyprint",
+  "version": 1,
+  "features": ["json", "jwt", "base64"]
+}

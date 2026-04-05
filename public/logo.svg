@@ -1,0 +1,58 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pp-gradient" x1="96" y1="96" x2="416" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="55%" stop-color="#0891B2"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left brace -->
+  <path
+    d="M170 134
+       C142 134 124 152 124 180
+       V210
+       C124 232 114 247 96 256
+       C114 265 124 280 124 302
+       V332
+       C124 360 142 378 170 378"
+    stroke="url(#pp-gradient)"
+    stroke-width="28"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+  <!-- p stem -->
+  <path
+    d="M240 166 V346"
+    stroke="url(#pp-gradient)"
+    stroke-width="28"
+    stroke-linecap="round"/>
+
+  <!-- p bowl (reduced size + tighter loop) -->
+  <path
+    d="M240 210
+       C240 192 254 178 274 178
+       H294
+       C326 178 350 202 350 236
+       C350 270 326 294 294 294
+       H274
+       C254 294 240 280 240 262"
+    stroke="url(#pp-gradient)"
+    stroke-width="28"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+  <!-- Right brace (moved right for spacing) -->
+  <path
+    d="M370 134
+       C398 134 416 152 416 180
+       V210
+       C416 232 426 247 444 256
+       C426 265 416 280 416 302
+       V332
+       C416 360 398 378 370 378"
+    stroke="url(#pp-gradient)"
+    stroke-width="28"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+</svg>

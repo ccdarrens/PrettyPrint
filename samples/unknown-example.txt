@@ -1,0 +1,1 @@
+This is plain text with no obvious structured format, no encoding markers, and no parser match.

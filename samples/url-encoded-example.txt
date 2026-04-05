@@ -1,0 +1,1 @@
+name=PrettyPrint&mode=local%20only&feature=upload%2Bdetect

@@ -1,15 +1,22 @@
 {
   "name": "prettyprint",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "devDependencies": {
     "typescript": "~5.9.3",
     "vite": "^8.0.1"
+  },
+  "dependencies": {
+    "@peculiar/x509": "^2.0.0",
+    "reflect-metadata": "^0.2.2"
   }
 }
