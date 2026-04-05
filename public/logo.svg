@@ -23,20 +23,20 @@
 
   <!-- p stem -->
   <path
-    d="M240 166 V346"
+    d="M239 166 V346"
     stroke="url(#pp-gradient)"
     stroke-width="28"
     stroke-linecap="round"/>
 
   <!-- p bowl (reduced size + tighter loop) -->
   <path
-    d="M240 210
-       C240 192 254 178 274 178
-       H294
-       C326 178 350 202 350 236
-       C350 270 326 294 294 294
-       H274
-       C254 294 240 280 240 262"
+    d="M239 210
+       C239 192 253 178 273 178
+       H293
+       C325 178 349 202 349 236
+       C349 270 325 294 293 294
+       H273
+       C253 294 239 280 239 262"
     stroke="url(#pp-gradient)"
     stroke-width="28"
     stroke-linecap="round"

@@ -77,6 +77,14 @@
   grid-template-rows: auto minmax(0, 1fr);
 }
 
+.workspace-output-collapsed {
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.workspace-both-collapsed {
+  grid-template-rows: auto auto;
+}
+
 .input-panel {
   grid-area: input;
 }
@@ -100,7 +108,9 @@
   }
 
   .workspace,
-  .workspace-input-collapsed {
+  .workspace-input-collapsed,
+  .workspace-output-collapsed,
+  .workspace-both-collapsed {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:

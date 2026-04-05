@@ -12,7 +12,7 @@ export function parseXml(input: string) {
     format: 'xml' as const,
     title: 'XML detected',
     summary: 'Input looks like an XML document.',
-    prettyText: prettyXml(input),
+    prettyText: prettyXml(documentNode, input),
     metadata: [
       { label: 'Root element', value: documentNode.documentElement.nodeName },
       { label: 'Document type', value: documentNode.doctype?.name ?? 'None' },

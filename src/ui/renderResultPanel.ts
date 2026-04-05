@@ -16,6 +16,18 @@ const downloadIcon = `
   </svg>
 `;
 
+const collapseIcon = `
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M7 14l5-5 5 5" />
+  </svg>
+`;
+
+const expandIcon = `
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M7 10l5 5 5-5" />
+  </svg>
+`;
+
 function renderWarnings(warnings?: string[]): string {
   if (!warnings || warnings.length === 0) {
     return '';
@@ -28,9 +40,11 @@ function renderWarnings(warnings?: string[]): string {
   `;
 }
 
-export function renderResultPanel(parsed: ParsedOutput | null, _error: string | null): string {
+export function renderResultPanel(parsed: ParsedOutput | null, _error: string | null, collapsed: boolean): string {
+  const emptyMessage = 'No detected format yet. Supported parsers can register themselves through the detector pipeline.';
+
   return `
-    <section class="panel output-panel">
+    <section class="panel output-panel ${collapsed ? 'panel-collapsed' : ''}">
       <div class="panel-head">
         <div>
           <p class="section-kicker">Output</p>
@@ -44,13 +58,20 @@ export function renderResultPanel(parsed: ParsedOutput | null, _error: string | 
             ${downloadIcon}
             <span class="visually-hidden">Download formatted output</span>
           </button>
+          <button
+            type="button"
+            id="toggle-output"
+            class="icon-button"
+            title="${collapsed ? 'Expand output panel' : 'Collapse output panel'}"
+            aria-expanded="${collapsed ? 'false' : 'true'}"
+          >
+            ${collapsed ? expandIcon : collapseIcon}
+            <span class="visually-hidden">${collapsed ? 'Expand output panel' : 'Collapse output panel'}</span>
+          </button>
         </div>
       </div>
-      ${renderWarnings(parsed?.warnings)}
-      <pre class="output-view"><code>${escapeHtml(
-        parsed?.prettyText ??
-          'No detected format yet. Supported parsers can register themselves through the detector pipeline.',
-      )}</code></pre>
+      ${collapsed ? '' : renderWarnings(parsed?.warnings)}
+      ${collapsed ? '' : `<pre class="output-view"><code>${escapeHtml(parsed?.prettyText ?? emptyMessage)}</code></pre>`}
     </section>
   `;
 }

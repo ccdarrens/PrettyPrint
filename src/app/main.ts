@@ -18,6 +18,7 @@ if (!appRoot) {
 const rootElement: HTMLElement = appRoot;
 let state: AppState = deriveAppState(SAMPLE_INPUT);
 let inputCollapsed = false;
+let outputCollapsed = false;
 
 function getExtension(format: DetectedFormat): string {
   switch (format) {
@@ -64,6 +65,7 @@ function bindEvents(): void {
   const textarea = rootElement.querySelector<HTMLTextAreaElement>('#source-input');
   const clearButton = rootElement.querySelector<HTMLButtonElement>('#clear-input');
   const toggleInputButton = rootElement.querySelector<HTMLButtonElement>('#toggle-input');
+  const toggleOutputButton = rootElement.querySelector<HTMLButtonElement>('#toggle-output');
   const copyButton = rootElement.querySelector<HTMLButtonElement>('#copy-output');
   const downloadButton = rootElement.querySelector<HTMLButtonElement>('#download-output');
   const fileInput = rootElement.querySelector<HTMLInputElement>('#file-input');
@@ -84,6 +86,11 @@ function bindEvents(): void {
 
   toggleInputButton?.addEventListener('click', () => {
     inputCollapsed = !inputCollapsed;
+    render();
+  });
+
+  toggleOutputButton?.addEventListener('click', () => {
+    outputCollapsed = !outputCollapsed;
     render();
   });
 
@@ -118,7 +125,7 @@ function bindEvents(): void {
 }
 
 function render(): void {
-  rootElement.innerHTML = renderApp(state, inputCollapsed);
+  rootElement.innerHTML = renderApp(state, inputCollapsed, outputCollapsed);
   bindEvents();
 }
 

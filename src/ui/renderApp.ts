@@ -4,13 +4,22 @@ import { renderInputPanel } from './renderInputPanel';
 import { renderMetadataPanel } from './renderMetadataPanel';
 import { renderResultPanel } from './renderResultPanel';
 
-export function renderApp(state: AppState, inputCollapsed: boolean): string {
+export function renderApp(state: AppState, inputCollapsed: boolean, outputCollapsed: boolean): string {
+  const workspaceClassName = [
+    'workspace',
+    inputCollapsed && outputCollapsed ? 'workspace-both-collapsed' : '',
+    inputCollapsed && !outputCollapsed ? 'workspace-input-collapsed' : '',
+    outputCollapsed && !inputCollapsed ? 'workspace-output-collapsed' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return `
     <div class="shell">
       ${renderHeader()}
-      <main class="workspace ${inputCollapsed ? 'workspace-input-collapsed' : ''}">
+      <main class="${workspaceClassName}">
         ${renderInputPanel(state.input, state.sourceName, inputCollapsed)}
-        ${renderResultPanel(state.parsed, state.error)}
+        ${renderResultPanel(state.parsed, state.error, outputCollapsed)}
         ${renderMetadataPanel(state.parsed)}
       </main>
     </div>
