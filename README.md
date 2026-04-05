@@ -15,12 +15,18 @@ Pretty Print is a local-first developer text inspection tool. You paste or uploa
 
 ## How to use the site
 
+Launch the site at [prettyprint.io](https://prettyprint.io).
+
 1. Open the site in your browser.
 2. Paste text into the `INPUT` panel, or use the upload icon to load a local file.
 3. The app detects the most likely format automatically.
 4. Review the formatted result in the `OUTPUT` panel.
 5. Review extracted fields in the `DETAILS` panel.
 6. Use the copy or download icons to export the formatted output.
+
+## Screenshot
+
+![Pretty Print application screenshot](./docs/screenshots/app-screenshot.png)
 
 ## Common workflows
 
